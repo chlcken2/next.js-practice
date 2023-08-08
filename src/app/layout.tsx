@@ -24,6 +24,7 @@ export default function RootLayout({
         <header className={styles.header}>
           <h1>header nav bar</h1>
           <nav className={styles.nav}>
+            <a href='/products'>Products</a>
             <a href='/contact'>Contact</a>
             <a href='/about'>about</a>
           </nav>

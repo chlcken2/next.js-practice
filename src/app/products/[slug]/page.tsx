@@ -8,7 +8,7 @@ export default function Pants({params}: Props) {
 } 
 
 export function generateStaticParams() {
-    const products = ['pants', 'skirt'];
+    const products = ['shirt', 'pants', 'skirt', 'shoes'];
     return products.map(product => ({
         slug: product
     }))
