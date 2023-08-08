@@ -1,4 +1,6 @@
 import './globals.css'
+import styles from './layout.module.css'
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -16,7 +18,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      {/* <body className={inter.className}>{children}</body> */}
+      <head/>
+      <body>
+        <header className={styles.header}>
+          <h1>header nav bar</h1>
+          <nav className={styles.nav}>
+            <a href='/contact'>Contact</a>
+            <a href='/about'>about</a>
+          </nav>
+        </header>
+        {children}
+      </body> 
     </html>
   )
 }
