@@ -11,7 +11,7 @@ export default async function ProductsPage() {
     return (
     <>
         <h1>제품 소개 페이지!</h1>        
-        <Image src = {clothesImage} alt='Clothes'/>
+        <Image src = {clothesImage} alt='Clothes' priority/>
         <ul>
             {products.map((product, index) => (
                 <li key={index}>

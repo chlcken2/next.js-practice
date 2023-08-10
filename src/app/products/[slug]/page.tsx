@@ -1,5 +1,5 @@
 import { getProduct, getProducts } from '@/service/products';
-
+import Image from 'next/image';
 // export const revalidate = 10;
 
 type Props = {
@@ -17,7 +17,17 @@ export function generateMetadata({ params }: Props) {
 export default async function ProductPage({params: {slug}}: Props) {
     const product = await getProduct(slug);
 
-    return <h1>{product?.name} 제품 설명 페이지!</h1>
+    return (
+        <>
+            <h1>{product?.name} 제품 설명 페이지!</h1>
+            <Image 
+                src={`/images/${product?.image}`}
+                alt=''                
+                width='300'
+                height='300'
+            />
+        </>
+    );    
 } 
 
 export async function generateStaticParams() {
