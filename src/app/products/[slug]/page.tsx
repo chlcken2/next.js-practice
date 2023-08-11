@@ -1,5 +1,8 @@
+import GoProductsButton from '@/components/GoProductsButton';
 import { getProduct, getProducts } from '@/service/products';
+import { redirect } from 'next/dist/server/api-utils';
 import Image from 'next/image';
+import router from 'next/navigation';
 // export const revalidate = 10;
 
 type Props = {
@@ -17,6 +20,10 @@ export function generateMetadata({ params }: Props) {
 export default async function ProductPage({params: {slug}}: Props) {
     const product = await getProduct(slug);
 
+    // if(!product) {
+    //     redirect('/products')
+    // }
+
     return (
         <>
             <h1>{product?.name} 제품 설명 페이지!</h1>
@@ -26,6 +33,7 @@ export default async function ProductPage({params: {slug}}: Props) {
                 width='300'
                 height='300'
             />
+            <GoProductsButton/>
         </>
     );    
 } 
