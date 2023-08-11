@@ -1,11 +1,5 @@
 import type { Metadata } from 'next';
 import styles from './layout.module.css';
-import {Open_Sans} from 'next/font/google';
-import {Nanum_Gothic} from 'next/font/google';
-
-
-const snas = Open_Sans({subsets: ['latin']});
-const gothic = Nanum_Gothic({ weight: '700', subsets: ['latin']});
 
 export const metadata: Metadata = {
     title: '멋진 제품 사이트 | 전체 제품 확인',
